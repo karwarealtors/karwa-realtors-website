@@ -12,6 +12,11 @@
   const ctx = canvas.getContext("2d");
   const DPR = Math.min(window.devicePixelRatio || 1, 2);
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // On phones / touch devices, render a crisp static frame instead of a
+  // continuous animation loop — keeps scrolling smooth and saves battery.
+  const lowPower = reduceMotion ||
+    window.matchMedia("(max-width: 760px)").matches ||
+    window.matchMedia("(pointer: coarse)").matches;
 
   let W = 0, H = 0;
 
@@ -202,23 +207,12 @@
     }
   }
 
-  /* ---------- Render loop ---------- */
-  let visible = true;
-  const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; });
-  io.observe(canvas);
-
-  function frame(t) {
-    requestAnimationFrame(frame);
-    if (!visible) return;
-
-    smX += (mouseX - smX) * 0.03;
-    smY += (mouseY - smY) * 0.03;
-    if (!reduceMotion) angle += 0.0016;
+  /* ---------- Draw one full frame ---------- */
+  function render(t) {
     const a = angle + smX * 0.12;
     const sinA = Math.sin(a), cosA = Math.cos(a);
 
     ctx.clearRect(0, 0, W, H);
-
     drawGround(sinA, cosA);
 
     // painter's sort: far buildings first
@@ -230,8 +224,35 @@
       .sort((p, q) => q.rz - p.rz);
 
     for (const { b } of order) drawBuilding(b, sinA, cosA, t);
-
     drawDust(t);
+  }
+
+  /* ---------- Static render on phones / reduced motion ---------- */
+  if (lowPower) {
+    const drawStatic = () => { resize(); render(900); };
+    drawStatic();
+    // redraw on orientation change / resize so it stays sharp, but never loop
+    let rt = null;
+    window.addEventListener("resize", () => {
+      clearTimeout(rt);
+      rt = setTimeout(drawStatic, 150);
+    }, { passive: true });
+    return;
+  }
+
+  /* ---------- Animated render loop (desktop) ---------- */
+  let visible = true;
+  const io = new IntersectionObserver(([e]) => { visible = e.isIntersecting; });
+  io.observe(canvas);
+
+  function frame(t) {
+    requestAnimationFrame(frame);
+    if (!visible) return;
+
+    smX += (mouseX - smX) * 0.03;
+    smY += (mouseY - smY) * 0.03;
+    angle += 0.0016;
+    render(t);
   }
   requestAnimationFrame(frame);
 })();
