@@ -58,6 +58,29 @@
     }, 7000);
   }
 
+  /* ---------- Featured projects: swipe indicator (mobile carousel) ---------- */
+  const featList = document.querySelector(".feat-list");
+  const featDots = [...document.querySelectorAll(".feat-swipe-hint span")];
+  if (featList && featDots.length) {
+    let ticking = false;
+    const syncDots = () => {
+      const items = [...featList.querySelectorAll(".feat-item")];
+      if (!items.length) return;
+      const mid = featList.scrollLeft + featList.clientWidth / 2;
+      let active = 0, best = Infinity;
+      items.forEach((el, i) => {
+        const centre = el.offsetLeft + el.offsetWidth / 2;
+        const d = Math.abs(centre - mid);
+        if (d < best) { best = d; active = i; }
+      });
+      featDots.forEach((d, i) => d.classList.toggle("is-on", i === active));
+      ticking = false;
+    };
+    featList.addEventListener("scroll", () => {
+      if (!ticking) { requestAnimationFrame(syncDots); ticking = true; }
+    }, { passive: true });
+  }
+
   /* ---------- Header: transparent → solid ---------- */
   const header = document.querySelector(".site-header");
   if (header) {
