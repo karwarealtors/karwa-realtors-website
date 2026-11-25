@@ -17,17 +17,20 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=6">
-<link rel="stylesheet" href="css/projects.css?v=6">
+<script>(function(){var d=document.documentElement;try{var s=sessionStorage,f=s.getItem('kr_intro_force');if(f)s.removeItem('kr_intro_force');var internal=document.referrer&&document.referrer.indexOf(location.host)>-1;var wn=(window.name||'').indexOf('kr_intro')>-1;if(f||(!s.getItem('kr_intro')&&!wn&&!internal&&!matchMedia('(prefers-reduced-motion: reduce)').matches)){d.classList.add('intro-on');setTimeout(function(){d.classList.remove('intro-on','intro-out')},5000)}}catch(e){}})();</script>
+<link rel="preload" as="image" href="images/brand/logo-hd.png?v=1">
+<link rel="stylesheet" href="css/style.css?v=7">
+<link rel="stylesheet" href="css/projects.css?v=7">
 </head>
 <body>
+<div id="kr-intro" aria-hidden="true"><div class="ib"></div><img class="il" src="images/brand/logo-hd.png?v=1" alt=""><span class="ln"></span></div>
 <div class="kr" style="font-family: 'Inter', system-ui, sans-serif; color: #1D1C1A; background: #F5F2EC; font-weight: 400; -webkit-font-smoothing: antialiased; overflow-x: clip">
 
   <!-- ================= HEADER ================= -->
   <header style="border-bottom: 1px solid rgba(29,28,26,.12)">
     <div class="wrap hdr">
       <a href="index.html" aria-label="Karwa Realtors home" style="display: flex">
-        <img class="logo" src="images/brand/logo.png?v=2" alt="Karwa Realtors">
+        <img class="logo" src="images/brand/logo.png?v=2" srcset="images/brand/logo.png?v=2 1x, images/brand/logo-hd.png?v=1 2x" alt="Karwa Realtors">
       </a>
       <nav class="nav" aria-label="Primary" style="font-size: 12px; font-weight: 400; letter-spacing: .2em; text-transform: uppercase">
         <a href="projects.html" aria-current="page" style="color: #1D1C1A; border-bottom: 1px solid #1D1C1A">Projects</a>
@@ -150,6 +153,7 @@
   </footer>
 
 </div>
+<script src="js/intro.js?v=1" defer></script>
 <script src="js/main.js?v=3" defer></script>
 <script src="js/projects.js?v=3" defer></script>
 </body>
