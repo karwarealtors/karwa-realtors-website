@@ -137,4 +137,74 @@ a{color:#1D1C1A;text-decoration:none}a:hover{color:#000}
 .kr .frame > div,.kr .frame-d > div{position:relative;overflow:hidden}
 .kr .frame > div > img,.kr .frame-d > div > img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
 @media (hover:none){.kr .scol:hover img,.kr .svc-card:hover img{transform:none}}
+
+/* ---------- phone polish: centred, calmer type, tighter rhythm ---------- */
+@media (max-width:700px){
+  .kr p{font-size:15px !important;line-height:1.75 !important}
+  .kr h2{font-size:30px !important;line-height:1.14 !important;letter-spacing:-.015em !important;text-align:center}
+  .kr #about h2{font-size:24px !important;line-height:1.32 !important}
+  .kr .h1{font-size:40px !important;line-height:1.08 !important}
+  .kr .logo{height:32px}
+  .kr .btn-dark,.kr .btn-line{justify-content:center}
+  /* section rhythm */
+  .kr section.wrap:not(#top),.kr section > .wrap:not(.stats){padding-top:56px !important;padding-bottom:64px !important}
+  .kr .rail{justify-content:center;gap:12px;border-top:0 !important;padding-top:0 !important;margin-bottom:32px !important;font-size:10px;letter-spacing:.22em}
+  .kr .rail::before,.kr .rail::after{content:"";flex:1;height:1px;background:currentColor;opacity:.28}
+  .kr .rail > span:first-child{display:none}
+  /* hero */
+  .kr #top{padding-top:36px !important;padding-bottom:48px !important}
+  .kr #top .hero-grid > div:first-child{align-items:center;text-align:center;gap:26px !important}
+  .kr #top .hero-grid > div:first-child > div{justify-content:center;align-items:center}
+  .kr #top .hero-grid > div:first-child > div:first-child > span:first-child{display:none}
+  .kr #top .hero-grid > div:first-child > div:last-child{gap:28px !important}
+  .kr #top .hero-grid > div:first-child > div:last-child > div{flex-direction:column;width:100%;gap:18px !important}
+  .kr #top .btn-dark{width:100%}
+  .kr #top figcaption{flex-direction:column;align-items:center !important;gap:4px !important}
+  .kr .hero-img{aspect-ratio:4 / 5}
+  /* stats */
+  .kr .stat,.kr .stat:nth-child(odd),.kr .stat:nth-child(even){align-items:center;text-align:center;padding:26px 8px !important}
+  .kr .stat-num{font-size:36px}
+  /* who we are */
+  .kr #about .intro-grid > div{align-items:center;text-align:center;gap:22px !important}
+  .kr #about .intro-grid{gap:32px}
+  /* section heads with a button */
+  .kr .wrap > div[style*="space-between"]{flex-direction:column;align-items:center !important;text-align:center;gap:22px !important;margin-bottom:36px !important}
+  /* projects showcase */
+  .kr .scol{gap:18px;text-align:center}
+  .kr .sdot{left:50% !important;transform:translateX(-50%)}
+  .kr .slabel{justify-content:center;font-size:10px}
+  .kr .sbody{align-items:center}
+  .kr .scol h3{font-size:24px !important}
+  .kr .smore{align-self:stretch;justify-content:center}
+  /* services */
+  .kr #services h2{margin-bottom:32px !important}
+  .kr .svc-card{text-align:center}
+  .kr .svc-card > div:last-child{align-items:center}
+  .kr .svc-card > div:last-child > span:nth-child(2){font-size:24px !important}
+  .kr .ways{margin:0}
+  .kr .way{align-items:center;text-align:center}
+  .kr .way > span:nth-child(2){font-size:21px !important}
+  .kr #services .wrap > div[style*="margin-top"]{margin-top:48px !important}
+  /* leadership */
+  .kr #leadership .wrap > div,.kr #leadership > div{gap:28px !important}
+  .kr .lead-grid{gap:16px}
+  .kr .lead-grid article{text-align:center;gap:12px !important}
+  .kr .lead-grid article > div:last-child{align-items:center}
+  .kr .lead-grid h3{font-size:20px !important}
+  /* contact */
+  .kr .contact-grid{gap:36px}
+  .kr .contact-grid > div:first-child{align-items:center;text-align:center;gap:20px !important}
+  .kr .contact-grid > div:first-child > div{flex-direction:column;width:100%;gap:18px !important}
+  .kr .contact-grid .btn-dark{width:100%}
+  .kr .contact-grid > div:last-child > a,.kr .contact-grid > div:last-child > div{flex-direction:column;align-items:center !important;gap:6px !important;text-align:center;padding:18px 0 !important}
+  .kr .contact-grid > div:last-child span{text-align:center !important;font-size:17px !important}
+  .kr .contact-grid > div:last-child span:first-child{font-size:10px !important}
+  /* footer */
+  .kr .foot .foot-grid{gap:36px;text-align:center}
+  .kr .foot .foot-grid > div{align-items:center}
+  .kr .foot .foot-grid img{align-self:center !important;height:40px !important}
+  .kr .foot .foot-grid p{margin:0 auto !important}
+  .kr .foot .wrap > div:last-child{flex-direction:column;align-items:center;text-align:center}
+  .kr #mobile-menu a{text-align:center}
+}
 .kr #mobile-menu[hidden]{display:none !important}
