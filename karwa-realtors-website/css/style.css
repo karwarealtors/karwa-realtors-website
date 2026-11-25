@@ -221,4 +221,54 @@ a{color:#1D1C1A;text-decoration:none}a:hover{color:#000}
   .kr section:not(#about) h2{border-left:0;padding:20px 16px !important;border:1px solid rgba(29,28,26,.2);border-top:3px solid #FAB600}
   .kr section#services:not(#about) h2{border-color:rgba(237,232,223,.3);border-top-color:#FAB600}
 }
+
+/* ---------- WhatsApp button + About page ---------- */
+.kr .wa-btn{width:56px;height:56px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:#25D366;color:#fff;flex:none;align-self:center;transition:transform .3s,background .3s}
+.kr .wa-btn:hover{transform:scale(1.06);background:#1EBE5B;color:#fff}
+.kr .ab-intro{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:36px clamp(40px,6vw,96px);align-items:end}
+.kr .facts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid rgba(29,28,26,.18);border-bottom:1px solid rgba(29,28,26,.18)}
+.kr .fact{display:flex;flex-direction:column;gap:8px;padding:24px 20px;border-left:1px solid rgba(29,28,26,.12)}
+.kr .fact:first-child{border-left:0;padding-left:0}
+.kr .fact-l{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#6E685F}
+.kr .fact-v{font-size:15px;font-weight:500;line-height:1.5;color:#1D1C1A}
+.kr .values{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(29,28,26,.18)}
+.kr .value{display:flex;flex-direction:column;gap:10px;padding:28px 28px 4px;border-left:1px solid rgba(29,28,26,.12)}
+.kr .value:first-child{border-left:0;padding-left:0}
+.kr .value-n{font-size:12px;font-weight:600;letter-spacing:.18em;color:#9C6E06}
+.kr .value p{margin:0;font-size:15px;line-height:1.75;color:#4A4640}
+@media (max-width:1023px){
+  .kr .ab-intro{grid-template-columns:minmax(0,1fr)}
+  .kr .facts{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .kr .fact:nth-child(4){border-left:0;padding-left:0}
+  .kr .values{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kr .value:nth-child(3){border-left:0;padding-left:0}
+}
+@media (max-width:700px){
+  .kr .ab-intro{text-align:center;gap:22px}
+  .kr .ab-intro h1{font-size:40px !important;line-height:1.08 !important}
+  .kr .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kr .fact,.kr .fact:first-child,.kr .fact:nth-child(4){align-items:center;text-align:center;padding:20px 8px;border-left:0;border-top:1px solid rgba(29,28,26,.12)}
+  .kr .fact:nth-child(-n+2){border-top:0}
+  .kr .fact:last-child{grid-column:1 / -1}
+  .kr .ab-story .intro-grid > div{align-items:center;text-align:center;gap:22px !important}
+  .kr .values{grid-template-columns:minmax(0,1fr)}
+  .kr .value,.kr .value:first-child,.kr .value:nth-child(3){align-items:center;text-align:center;padding:22px 0;border-left:0;border-top:1px solid rgba(29,28,26,.12)}
+  .kr .value:first-child{border-top:0}
+}
+.kr .lm-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px clamp(32px,5vw,80px)}
+.kr .lm{display:grid;grid-template-columns:clamp(112px,11vw,150px) minmax(0,1fr);gap:clamp(20px,2.4vw,32px);align-items:center}
+.kr .lm .frame{aspect-ratio:4 / 5}
+.kr .lm p{margin:0;font-size:14px;line-height:1.75;color:#4A4640}
+@media (max-width:1023px){.kr .lm-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:700px){
+  .kr .lm{grid-template-columns:minmax(0,1fr);justify-items:center;text-align:center;gap:16px}
+  .kr .lm .frame{width:150px}
+  .kr .lm > div:last-child{align-items:center}
+  .kr .lm-grid{gap:40px}
+  .kr .ab-vals .values{margin-top:0}
+}
+@media (max-width:700px){
+  .kr .ctagrp,.kr .contact-grid > div:first-child > div.ctagrp{flex-direction:row;flex-wrap:nowrap !important;width:100%;justify-content:center;gap:12px !important}
+  .kr .ctagrp .btn-dark,.kr .contact-grid .ctagrp .btn-dark{flex:1 1 auto;width:auto;padding:0 20px !important}
+}
 .kr #mobile-menu[hidden]{display:none !important}
