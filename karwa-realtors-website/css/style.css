@@ -207,4 +207,18 @@ a{color:#1D1C1A;text-decoration:none}a:hover{color:#000}
   .kr .foot .wrap > div:last-child{flex-direction:column;align-items:center;text-align:center}
   .kr #mobile-menu a{text-align:center}
 }
+
+/* ---------- emphasis v2: clearer labels, framed headlines ---------- */
+.kr .rail{font-size:13px;font-weight:600;letter-spacing:.2em;color:#3A362F}
+.kr .rail > span:nth-child(2){color:#9C6E06}
+.kr .rail-d{color:#E4DED3}
+.kr .rail-d > span:nth-child(2){color:#FAB600}
+.kr section:not(#about) h2{border-left:3px solid #FAB600;padding-left:26px}
+@media (max-width:700px){
+  .kr .rail{font-size:11px;font-weight:600;color:#3A362F}
+  .kr .rail-d{color:#E4DED3}
+  .kr .rail::before,.kr .rail::after{opacity:.45}
+  .kr section:not(#about) h2{border-left:0;padding:20px 16px !important;border:1px solid rgba(29,28,26,.2);border-top:3px solid #FAB600}
+  .kr section#services:not(#about) h2{border-color:rgba(237,232,223,.3);border-top-color:#FAB600}
+}
 .kr #mobile-menu[hidden]{display:none !important}
