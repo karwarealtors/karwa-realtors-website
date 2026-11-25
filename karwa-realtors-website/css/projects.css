@@ -1,0 +1,36 @@
+/* Karwa Realtors: Projects page */
+.kr .intro2{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px clamp(40px,6vw,96px);align-items:end}
+.kr .counts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(29,28,26,.18)}
+.kr .counts > div{display:flex;flex-direction:column;gap:6px;padding:18px 0 0 20px;border-left:1px solid rgba(29,28,26,.12)}
+.kr .counts > div:first-child{border-left:0;padding-left:0}
+.kr .cnum{font-size:40px;font-weight:300;line-height:1;font-variant-numeric:lining-nums}
+.kr .clab{font-size:10px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:#6E685F}
+.kr .tabs{display:flex;gap:clamp(24px,3vw,44px);border-bottom:1px solid rgba(29,28,26,.16);overflow-x:auto;scrollbar-width:none}
+.kr .tabs::-webkit-scrollbar{display:none}
+.kr .tab{background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;padding:0 0 16px;cursor:pointer;display:flex;gap:8px;white-space:nowrap;min-height:44px;align-items:flex-end;color:#6E685F}
+.kr .tab.is-active{color:#1D1C1A;border-bottom-color:#1D1C1A}
+.kr .tab-l{font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase}
+.kr .tab-c{font-size:12px;font-weight:400;color:#6E685F}
+.kr .proj-index{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(40px,5vw,80px);align-items:start}
+.kr .proj-media{position:sticky;top:32px;aspect-ratio:5 / 6}
+
+
+.kr .row{width:100%;background:none;border:0;border-bottom:1px solid rgba(29,28,26,.14);padding:24px 0;cursor:pointer;text-align:left;display:grid;grid-template-columns:44px minmax(0,1fr) 20px;gap:16px;align-items:baseline;color:#1D1C1A}
+.kr .row-name{opacity:.55;transition:opacity .3s}
+.kr .row:hover .row-name,.kr .row[aria-expanded="true"] .row-name{opacity:1}
+.kr .proj-cards{display:none}
+.kr .pcard{flex:0 0 46%;scroll-snap-align:start;display:flex;flex-direction:column;gap:18px}
+.kr #proj-more[hidden]{display:none !important}
+@media (max-width:1023px){
+  .kr .proj-wrap .cctrl{display:flex}
+  .kr .intro2{grid-template-columns:1fr}
+  .kr .proj-index{display:none}
+  .kr .proj-cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:20px;margin-left:calc(-1 * clamp(20px,4vw,56px));margin-right:calc(-1 * clamp(20px,4vw,56px));padding:0 clamp(20px,4vw,56px) 4px;scroll-padding-left:clamp(20px,4vw,56px);scrollbar-width:none}
+  .kr .proj-cards::-webkit-scrollbar{display:none}
+}
+@media (max-width:700px){
+  .kr .pcard{flex:0 0 84%}
+  .kr .cnum{font-size:32px}
+  .kr .tabs{gap:18px}
+  .kr .tab-l{letter-spacing:.12em}
+}
