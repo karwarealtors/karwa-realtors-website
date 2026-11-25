@@ -68,7 +68,7 @@
 
   function renderMedia(p) {
     var inner = p.img
-      ? '<img src="' + IMG + p.img + '" alt="' + p.name + ', ' + p.place + '" style="width: 100%; height: 100%; object-fit: cover">'
+      ? '<img src="' + IMG + p.img + '?v=2" alt="' + p.name + ', ' + p.place + '" style="width: 100%; height: 100%; object-fit: cover">'
       : placeholder(p.name, 28);
     el.media.innerHTML = inner +
       '<div style="position: absolute; left: 0; bottom: 0; display: flex; align-items: center; gap: 10px; padding: 12px 18px; background: #F5F2EC; font-size: 11px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; color: #1D1C1A">' +
@@ -100,7 +100,7 @@
   function renderCards(list) {
     el.cards.innerHTML = list.map(function (p) {
       var img = p.img
-        ? '<img src="' + IMG + p.img + '" alt="' + p.name + ', ' + p.place + '" loading="lazy" style="width: 100%; height: 100%; object-fit: cover">'
+        ? '<img src="' + IMG + p.img + '?v=2" alt="' + p.name + ', ' + p.place + '" loading="lazy" style="width: 100%; height: 100%; object-fit: cover">'
         : placeholder('', 23);
       return '<article class="pcard">' +
         '<div class="frame" style="aspect-ratio: 5 / 6"><div style="position: relative">' + img + '</div></div>' +
