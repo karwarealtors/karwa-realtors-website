@@ -13,8 +13,11 @@
     menu.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () { setOpen(false); });
     });
+    var menuW = window.innerWidth;
     window.addEventListener('resize', function () {
-      if (window.innerWidth > 1023) setOpen(false);
+      if (window.innerWidth === menuW) return;
+      menuW = window.innerWidth;
+      if (menuW > 1023) setOpen(false);
     });
   }
 
@@ -57,5 +60,10 @@
     document.querySelectorAll('.cwrap').forEach(setup);
   };
   window.KR.initCarousels();
-  window.addEventListener('resize', window.KR.initCarousels);
+  var lastW = window.innerWidth;
+  window.addEventListener('resize', function () {
+    if (window.innerWidth === lastW) return;
+    lastW = window.innerWidth;
+    window.KR.initCarousels();
+  });
 })();
