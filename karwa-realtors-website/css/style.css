@@ -272,3 +272,14 @@ a{color:#1D1C1A;text-decoration:none}a:hover{color:#000}
   .kr .ctagrp .btn-dark,.kr .contact-grid .ctagrp .btn-dark{flex:1 1 auto;width:auto;padding:0 20px !important}
 }
 .kr #mobile-menu[hidden]{display:none !important}
+/* ---------- Intro (first visit per session only) ---------- */
+#kr-intro{display:none}
+html{scrollbar-gutter:stable}
+html.intro-on #kr-intro{display:block;position:fixed;top:0;right:0;bottom:0;left:0;z-index:9999;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:none;-webkit-user-select:none;user-select:none}
+html.intro-on body{overflow:hidden}
+#kr-intro .ib{position:absolute;top:0;right:0;bottom:0;left:0;background:#F5F2EC;will-change:transform}
+#kr-intro .il{position:fixed;left:50%;top:50%;width:240px;height:auto;max-width:none;opacity:0;-webkit-user-drag:none;pointer-events:none;transform-origin:0 0;will-change:transform,opacity}
+#kr-intro .ln{position:fixed;left:50%;top:50%;width:96px;height:2px;margin-left:-48px;background:#FAB600;transform:scaleX(0);transform-origin:50% 50%;pointer-events:none}
+html.intro-on header .logo{opacity:0}
+html.intro-on:not(.intro-out) .kr > section{opacity:0;transform:translateY(18px)}
+html.intro-out .kr > section{opacity:1;transform:none;transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
